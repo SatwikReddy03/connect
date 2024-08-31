@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>SignLink Video Chat</title>
+  <link rel="stylesheet" type="text/css" href="styles.css" />
+</head>
+<body>
+  <div id="overlay">
+    <div id="overlay-text"></div>
+  </div>
+  <div class="navbar">
+    <div class="nav-items">
+      <h1 class="title">SL Video Chat</h1>
+      <span id="filler"></span>
+      <div class="input">
+        <input id="room-input" class="room-input" placeholder="Enter Room ID" />
+        <button onclick="createRoom()" class="button-32" id="create-button" role="button">Create Room</button>
+        <button onclick="joinRoom()" class="button-32" id="join-button" role="button">Join Room</button>
+      </div>
+    </div>
+  </div>
+  <div class="meet-area">
+    <div class="remote-container">
+      <video id="remote-video" autoplay></video>
+      <canvas id="remote-mediapipes-output"></canvas>
+    </div>
+    <video id="local-video" autoplay muted></video>
+  </div>
+  <div id="chat-container">
+    <div id="messages"></div>
+    <input type="text" id="message-input" placeholder="Type your message here..." />
+    <button onclick="sendMessage()" class="button-32" id="send-button">Send</button>
+  </div>
+</body>
+<script defer src="https://unpkg.com/peerjs@1.4.7/dist/peerjs.min.js"></script>
+<script defer src="video_chat.js"></script>
+</html>
